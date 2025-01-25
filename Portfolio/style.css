@@ -1,0 +1,138 @@
+/* Basic styling for the portfolio */
+html, body {
+    height: 100%; /* Ensure full height for the body */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg'); /* Path to your background image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    color: #333; /* Text color */
+}
+
+header {
+    background-color: #333;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff9800; /* Highlight color on hover */
+}
+
+/* Animation section */
+#animation {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.animated-intro {
+    width: 300px; /* Adjust as needed */
+    animation: fadeIn 1s; /* Add fade-in animation */
+}
+
+/* Section styles */
+main {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make sections opaque with a solid background color */
+section {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    color: #333; /* Ensure the text color contrasts */
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section.hidden {
+    display: none;
+}
+
+/* Skills list */
+#skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+#skills ul li {
+    background: #f0f0f0;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Project Titles */
+.project-title {
+    cursor: pointer;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+.project-title:hover {
+    color: #0056b3; /* Darker shade on hover */
+}
+
+/* Contact section */
+#contact p {
+    font-size: 1.1em;
+    margin: 10px 0;
+    color: #555;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333; /* Footer background color */
+    color: white; /* Footer text color */
+    position: relative; /* Ensure it's positioned properly within the flex layout */
+    bottom: 0;
+    width: 100%; /* Stretches to the full width */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

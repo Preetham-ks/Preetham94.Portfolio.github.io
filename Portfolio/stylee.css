@@ -1,0 +1,170 @@
+/* Updated CSS for Portfolio */
+
+/* Basic styling */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #ff9800;
+}
+
+/* Section styles */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Base styles for section */
+section {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: none;
+    max-width: 600px;
+    width: 90%;
+    z-index: 10;
+}
+
+/* Visible section */
+section.visible {
+    display: block;
+    opacity: 1;
+}
+
+/* Hide sections by default */
+section.hidden {
+    display: none;
+}
+
+/* Animated section content */
+section.animated .animated-part {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+section.animated .part-1 {
+    top: -100px;
+    left: -100px;
+    transform: translate(100px, 100px);
+}
+
+section.animated .part-2 {
+    top: -100px;
+    right: -100px;
+    transform: translate(-100px, 100px);
+}
+
+section.animated .part-3 {
+    bottom: -100px;
+    left: -100px;
+    transform: translate(100px, -100px);
+}
+
+section.animated .part-4 {
+    bottom: -100px;
+    right: -100px;
+    transform: translate(-100px, -100px);
+}
+
+/* When animation starts */
+section.animated .part-1,
+section.animated .part-2,
+section.animated .part-3,
+section.animated .part-4 {
+    animation: fadeInFromCorner 1s forwards;
+}
+
+@keyframes fadeInFromCorner {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+
+/* Project titles and descriptions */
+.project-title {
+    cursor: pointer;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+.project-title:hover {
+    color: #0056b3;
+}
+
+.project-description.hidden {
+    display: none;
+}
+
+/* Contact section */
+#contact p {
+    font-size: 1.1em;
+    margin: 10px 0;
+    color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
